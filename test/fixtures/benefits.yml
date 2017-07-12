@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyText
+  areabenefit: one
+  costotrabajador: 1
+  costoempresa: 1
+  familia: 1
+  asistencia: 1
+
+two:
+  nombre: MyText
+  areabenefit: two
+  costotrabajador: 1
+  costoempresa: 1
+  familia: 1
+  asistencia: 1

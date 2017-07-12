@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Beneficios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre Beneficio</th>
+      <th>Area Beneficio</th>
+      <th>Costo Trabajador</th>
+      <th>Costo Empresa</th>
+      <th>Familia</th>
+      <th>Asistencia</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @benefits.each do |benefit| %>
+      <tr>
+        <td><%= benefit.nombre %></td>
+        <div style="display: none;">
+        <%= areabenefit = Areabenefit.find(benefit.areabenefit_id) %>
+        </div>
+        <td><%= areabenefit.nombre %></td>
+        <td><%= benefit.costotrabajador %></td>
+        <td><%= benefit.costoempresa %></td>
+        <td><%= benefit.familia %></td>
+        <td><%= benefit.asistencia %></td>
+        <td><%= link_to 'Mostrar', benefit %></td>
+        <td><%= link_to 'Editar', edit_benefit_path(benefit) %></td>
+        <td><%= link_to 'Destruir', benefit, method: :delete, data: { confirm: '¿Seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Benefit', new_benefit_path %>

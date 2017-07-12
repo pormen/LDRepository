@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trabajador: one
+  centrocosto: one
+  areabenefit: one
+  benefit: one
+
+two:
+  trabajador: two
+  centrocosto: two
+  areabenefit: two
+  benefit: two

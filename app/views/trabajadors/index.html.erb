@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Trabajadors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Rut</th>
+      <th>Centrocosto</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trabajadors.each do |trabajador| %>
+      <tr>
+        <td><%= trabajador.nombre %></td>
+        <td><%= trabajador.rut %></td>
+        <td><%= trabajador.centrocosto %></td>
+        <td><%= link_to 'Show', trabajador %></td>
+        <td><%= link_to 'Edit', edit_trabajador_path(trabajador) %></td>
+        <td><%= link_to 'Destroy', trabajador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trabajador', new_trabajador_path %>

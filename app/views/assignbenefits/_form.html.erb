@@ -1,0 +1,53 @@
+<%= form_for(assignbenefit) do |f| %>
+  <% if assignbenefit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(assignbenefit.errors.count, "error") %> prohibited this assignbenefit from being saved:</h2>
+
+      <ul>
+      <% assignbenefit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :benefit_id %>
+    <%= f.collection_select(:benefit_id, Benefit.all, :id, :nombre) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ruttrabajador %>
+    <%= f.text_area :ruttrabajador %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rutbeneficiario %>
+    <%= f.text_area :rutbeneficiario %>
+  </div>
+
+  <div class="field">
+    <%= f.label :relacion %>
+    <%= f.text_area :relacion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fechanacimiento %>
+    <%= f.text_area :fechanacimiento %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha %>
+    <%= f.text_area :fecha %>
+  </div>
+
+  <div class="field">
+    <%= f.label :idobra %>
+    <%= f.number_field :idobra %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

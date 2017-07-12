@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Atencionsocials</h1>
+
+<table border=5>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellidopaterno</th>
+      <th>Apellidomaterno</th>
+      <th>Rut</th>
+      <th>Fecha</th>
+      <th>Tipoconsulta</th>
+      <th>Benefit</th>
+      <th>Estado</th>
+      <th>Subcontrato</th>
+      <th>Obra</th>
+      <th>Telefono</th>
+      <th>Atencion</th>
+      <th>Supervisor</th>
+      <th>Descripcion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @atencionsocials.each do |atencionsocial| %>
+      <tr>
+        <td><%= atencionsocial.nombre %></td>
+        <td><%= atencionsocial.apellidopaterno %></td>
+        <td><%= atencionsocial.apellidomaterno %></td>
+        <td><%= atencionsocial.rut %></td>
+        <td><%= atencionsocial.fecha %></td>
+        <td><%= atencionsocial.tipoconsulta %></td>
+        <td><%= atencionsocial.benefit %></td>
+        <td><%= atencionsocial.estado %></td>
+        <td><%= atencionsocial.subcontrato %></td>
+        <td><%= atencionsocial.obra %></td>
+        <td><%= atencionsocial.telefono %></td>
+        <td><%= atencionsocial.atencion %></td>
+        <td><%= atencionsocial.supervisor %></td>
+        <td><%= atencionsocial.descripcion %></td>
+        <td><%= link_to 'Show', atencionsocial %></td>
+        <td><%= link_to 'Edit', edit_atencionsocial_path(atencionsocial) %></td>
+        <td><%= link_to 'Destroy', atencionsocial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Atencionsocial', new_atencionsocial_path %>

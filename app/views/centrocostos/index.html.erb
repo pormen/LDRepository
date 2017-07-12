@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Centrocostos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @centrocostos.each do |centrocosto| %>
+      <tr>
+        <td><%= centrocosto.codigo %></td>
+        <td><%= link_to 'Show', centrocosto %></td>
+        <td><%= link_to 'Edit', edit_centrocosto_path(centrocosto) %></td>
+        <td><%= link_to 'Destroy', centrocosto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Centrocosto', new_centrocosto_path %>

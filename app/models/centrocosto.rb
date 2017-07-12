@@ -1,0 +1,2 @@
+class Centrocosto < ApplicationRecord
+end

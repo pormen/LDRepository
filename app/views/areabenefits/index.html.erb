@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Area Beneficios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @areabenefits.each do |areabenefit| %>
+      <tr>
+        <td><%= areabenefit.nombre %></td>
+        <td><%= link_to 'Mostrar', areabenefit %></td>
+        <td><%= link_to 'Editar', edit_areabenefit_path(areabenefit) %></td>
+        <td><%= link_to 'Destruir', areabenefit, method: :delete, data: { confirm: '¿Seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Area Beneficio', new_areabenefit_path %>

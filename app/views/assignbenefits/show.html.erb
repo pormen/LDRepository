@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Beneficio:</strong>
+  <%= @assignbenefit.benefit %>
+</p>
+
+<p>
+  <strong>Rut Trabajador:</strong>
+  <%= @assignbenefit.ruttrabajador %>
+</p>
+
+<p>
+  <strong>Rut Beneficiario:</strong>
+  <%= @assignbenefit.rutbeneficiario %>
+</p>
+
+<p>
+  <strong>Relacion:</strong>
+  <%= @assignbenefit.relacion %>
+</p>
+
+<p>
+  <strong>Fecha Nacimiento:</strong>
+  <%= @assignbenefit.fechanacimiento %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @assignbenefit.fecha %>
+</p>
+
+<p>
+  <strong>Codigo Obra:</strong>
+  <%= @assignbenefit.idobra %>
+</p>
+
+<%= link_to 'Editar', edit_assignbenefit_path(@assignbenefit) %> |
+<%= link_to 'Volver', assignbenefits_path %>

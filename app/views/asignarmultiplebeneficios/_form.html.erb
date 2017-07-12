@@ -1,0 +1,37 @@
+<%= form_for(asignarmultiplebeneficio) do |f| %>
+  <% if asignarmultiplebeneficio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(asignarmultiplebeneficio.errors.count, "error") %> prohibited this asignarmultiplebeneficio from being saved:</h2>
+
+      <ul>
+      <% asignarmultiplebeneficio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :trabajador_id %>
+    <%= f.text_field :trabajador_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :centrocosto_id %>
+    <%= f.text_field :centrocosto_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :areabenefit_id %>
+    <%= f.text_field :areabenefit_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :benefit_id %>
+    <%= f.text_field :benefit_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

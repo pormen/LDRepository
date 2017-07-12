@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Asignarmultiplebeneficios</h1>
+
+<%=form_for @asignarmultiplebeneficio, url: {controller: "asignarmultiplebeneficios", action: "create"} do |f| %>
+
+
+
+  <div class="field">
+    <%= f.label :centrocosto_id %>
+    <%= f.collection_select(:centrocosto_id, Centrocosto.all, :id, :codigo) %>
+  </div>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Trabajador</th>
+      <th>Centrocosto</th>
+      <th>Areabenefit</th>
+      <th>Benefit</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trabajadores.each do |trabajador| %>
+      <tr>
+        <div style="display: none;">
+        <%= centrocosto = Centrocosto.find(trabajador.centrocosto.id) %>
+        </div>
+        <td><%= check_box_tag "trabajador.id", trabajador.id %></td>
+        <td><%= trabajador.nombre %></td>
+        <td><%= trabajador.rut %></td>
+        <td><%= centrocosto.codigo %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+  <div class="field">
+    <%= f.label :areabenefit_id %>
+    <%= f.collection_select(:areabenefit_id, Areabenefit.all, :id, :nombre) %>
+  </div>
+
+    <div class="field">
+    <%= f.label :benefit_id %>
+    <%= f.collection_select(:benefit_id, Benefit.all, :id, :nombre) %>
+  </div>
+
+
+<br>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'New Asignarmultiplebeneficio', new_asignarmultiplebeneficio_path %>

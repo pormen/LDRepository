@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyText
+  apellidopaterno: MyText
+  apellidomaterno: MyText
+  rut: MyText
+  fecha: MyText
+  tipoconsulta: MyText
+  benefit: one
+  estado: MyText
+  subcontrato: MyText
+  obra: MyText
+  telefono: MyText
+  atencion: 1
+  supervisor: MyText
+  descripcion: MyText
+
+two:
+  nombre: MyText
+  apellidopaterno: MyText
+  apellidomaterno: MyText
+  rut: MyText
+  fecha: MyText
+  tipoconsulta: MyText
+  benefit: two
+  estado: MyText
+  subcontrato: MyText
+  obra: MyText
+  telefono: MyText
+  atencion: 1
+  supervisor: MyText
+  descripcion: MyText

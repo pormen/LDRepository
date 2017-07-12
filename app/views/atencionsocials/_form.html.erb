@@ -1,0 +1,87 @@
+<%= form_for(atencionsocial) do |f| %>
+  <% if atencionsocial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(atencionsocial.errors.count, "error") %> prohibited this atencionsocial from being saved:</h2>
+
+      <ul>
+      <% atencionsocial.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_area :nombre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :apellidopaterno %>
+    <%= f.text_area :apellidopaterno %>
+  </div>
+
+  <div class="field">
+    <%= f.label :apellidomaterno %>
+    <%= f.text_area :apellidomaterno %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rut %>
+    <%= f.text_area :rut %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha %>
+    <%= f.text_area :fecha %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipoconsulta %>
+    <%= f.select(:tipoconsulta , [["Salud","Salud"],["Legal","Legal"]]) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :benefit_id %>
+    <%= f.collection_select(:benefit_id, Benefit.all, :id, :nombre) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :estado %>
+    <%= f.select(:estado , [["Cerrado","Cerrado"],["Abierto","Abierto"]]) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :subcontrato %>
+    <%= f.select(:subcontrato , [["No","No"],["Si","Si"]]) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :obra %>
+    <%= f.text_area :obra %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefono %>
+    <%= f.text_area :telefono %>
+  </div>
+
+  <div class="field">
+    <%= f.label :atencion %>
+    <%= f.number_field :atencion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :supervisor %>
+    <%= f.text_area :supervisor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descripcion %>
+    <%= f.text_area :descripcion %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,32 @@
+<%= form_for(trabajador) do |f| %>
+  <% if trabajador.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(trabajador.errors.count, "error") %> prohibited this trabajador from being saved:</h2>
+
+      <ul>
+      <% trabajador.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_area :nombre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rut %>
+    <%= f.text_area :rut %>
+  </div>
+
+  <div class="field">
+    <%= f.label :centrocosto_id %>
+    <%= f.collection_select(:centrocosto_id, Centrocosto.all, :id, :codigo) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

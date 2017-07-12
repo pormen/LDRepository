@@ -1,0 +1,2 @@
+module LogbenefitsHelper
+end

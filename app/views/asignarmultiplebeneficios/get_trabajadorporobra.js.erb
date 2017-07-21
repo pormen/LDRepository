@@ -1,0 +1,26 @@
+
+$('#tblTrabajadores tbody').remove();
+
+
+<% @trabajadores.each do |trabajador| %>
+	var con = '';
+<% if trabajador.estado == "activo" %>
+<% Rails.logger.warn " lala #{trabajador.rut}" %>
+	
+    
+    con+= '<tr>';
+    con+= '<td><%= trabajador.nombre %></td>';
+    con+= '<td><%= trabajador.rut %></td>';
+    con+= '<td><%= trabajador.estado %></td>';
+    con+= '</tr>';
+   
+   <% end %>
+   alert(String(con));
+<% end %>
+
+
+
+$('#tblTrabajadores tbody').html(con);
+<%    #@trabajadores.each do |test|    %>
+<%    #  Rails.logger.warn "Param #{test}"  %>
+<%    #end    %>

@@ -31,6 +31,29 @@
     <%= f.text_field :benefit_id %>
   </div>
 
+
+  <%= params.each do |key,value| 
+      Rails.logger.warn "Param #{key}: #{value}"
+
+      if key.include?("trabaj")
+        Rails.logger.warn "Entro"
+        tr = Trabajador.find(value)
+        Rails.logger.warn "#{tr.rut} jaja"
+
+        ab = Assignbenefit.new(
+                benefit_id: params[:asignarmultiplebeneficio][:benefit_id], 
+                ruttrabajador: tr.rut,
+                rutbeneficiario: tr.rut,
+                relacion: "----", 
+                fechanacimiento: "10-10-89", 
+                fecha: "13-07-2017", 
+                idobra: 1)        
+        ab.save!
+      end
+
+      end
+    %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

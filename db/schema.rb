@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170711000557) do
+ActiveRecord::Schema.define(version: 20170718042749) do
 
   create_table "areabenefits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "nombre",     limit: 65535
@@ -90,11 +90,17 @@ ActiveRecord::Schema.define(version: 20170711000557) do
   end
 
   create_table "trabajadors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "nombre",         limit: 65535
-    t.text     "rut",            limit: 65535
+    t.text     "nombre",             limit: 65535
+    t.text     "rut",                limit: 65535
     t.integer  "centrocosto_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.text     "activo",             limit: 65535
+    t.text     "estado",             limit: 65535
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["centrocosto_id"], name: "index_trabajadors_on_centrocosto_id", using: :btree
   end
 

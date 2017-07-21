@@ -3,6 +3,27 @@ class AsignarmultiplebeneficiosController < ApplicationController
 
   # GET /asignarmultiplebeneficios
   # GET /asignarmultiplebeneficios.json
+  def get_contacts
+
+    #@company = Benefits.find.params[:company_id]
+    #@contacts = @company.contacts
+
+    Rails.logger.warn "#{:areabenefit_id} jajaxxx"
+    @contacts = Benefit.where(areabenefit_id: params[:areabenefit_id])
+  end
+
+  def get_trabajadorporobra
+    
+
+
+    @trabajadores = Trabajador.where(centrocosto_id: params[:centrocosto_id])
+  
+
+    Rails.logger.warn "llegue aca jaja"
+  
+  end
+
+
   def index
     #@asignarmultiplebeneficios = Asignarmultiplebeneficio.all
     @asignarmultiplebeneficio = Asignarmultiplebeneficio.new
@@ -26,17 +47,40 @@ class AsignarmultiplebeneficiosController < ApplicationController
   # POST /asignarmultiplebeneficios
   # POST /asignarmultiplebeneficios.json
   def create
-    @asignarmultiplebeneficio = Asignarmultiplebeneficio.new(asignarmultiplebeneficio_params)
+      params.each do |key,value| 
+      Rails.logger.warn "Param #{key}: #{value}"
 
-    respond_to do |format|
-      if @asignarmultiplebeneficio.save
-        format.html { redirect_to @asignarmultiplebeneficio, notice: 'Asignarmultiplebeneficio was successfully created.' }
-        format.json { render :show, status: :created, location: @asignarmultiplebeneficio }
-      else
-        format.html { render :new }
-        format.json { render json: @asignarmultiplebeneficio.errors, status: :unprocessable_entity }
+      if key.include?("trabaj")
+        Rails.logger.warn "Entro"
+        tr = Trabajador.find(value)
+        Rails.logger.warn "#{tr.rut} jaja"
+
+        ab = Assignbenefit.new(
+                benefit_id: params[:asignarmultiplebeneficio][:benefit_id], 
+                ruttrabajador: tr.rut,
+                rutbeneficiario: tr.rut,
+                relacion: "----", 
+                fechanacimiento: "10-10-89", 
+                fecha: "13-07-2017", 
+                idobra: 1)        
+        ab.save!
       end
-    end
+
+      end
+    
+
+
+    #@asignarmultiplebeneficio = Asignarmultiplebeneficio.new(asignarmultiplebeneficio_params)
+
+    #respond_to do |format|
+    #  if @asignarmultiplebeneficio.save
+    #    format.html { redirect_to @asignarmultiplebeneficio, notice: 'Asignarmultiplebeneficio was successfully created.' }
+    #    format.json { render :show, status: :created, location: @asignarmultiplebeneficio }
+    #  else
+    #    format.html { render :new }
+    #    format.json { render json: @asignarmultiplebeneficio.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # PATCH/PUT /asignarmultiplebeneficios/1

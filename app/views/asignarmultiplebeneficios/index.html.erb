@@ -8,12 +8,12 @@
 
   <div class="field">
     <%= f.label :centrocosto_id %>
-    <%= f.collection_select(:centrocosto_id, Centrocosto.all, :id, :codigo) %>
+    <%= f.collection_select(:centrocosto_id, Centrocosto.all, :id, :codigo, {:prompt => "Escoger centro de costo"},{:class => "ccosto_selection"}) %>
   </div>
 
 
-
-<table>
+<div class="field">
+<table id="tblTrabajadores">
   <thead>
     <tr>
       <th>Trabajador</th>
@@ -26,28 +26,33 @@
 
   <tbody>
     <% @trabajadores.each do |trabajador| %>
+
+      <% if trabajador.estado == "activo" %>
       <tr>
         <div style="display: none;">
         <%= centrocosto = Centrocosto.find(trabajador.centrocosto.id) %>
         </div>
-        <td><%= check_box_tag "trabajador.id", trabajador.id %></td>
+        <td><%= check_box_tag "trabajador_id#{trabajador.id}", trabajador.id %></td>
         <td><%= trabajador.nombre %></td>
         <td><%= trabajador.rut %></td>
         <td><%= centrocosto.codigo %></td>
+        <td><%= trabajador.estado %></td>
 
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
+</div>
 
   <div class="field">
     <%= f.label :areabenefit_id %>
-    <%= f.collection_select(:areabenefit_id, Areabenefit.all, :id, :nombre) %>
+    <%= f.collection_select(:areabenefit_id, Areabenefit.all, :id, :nombre, {:prompt => "Please select a company"},{:class => "company_selection"}) %>
   </div>
 
     <div class="field">
     <%= f.label :benefit_id %>
-    <%= f.collection_select(:benefit_id, Benefit.all, :id, :nombre) %>
+    <%= f.collection_select(:benefit_id, Benefit.all, :id, :nombre, {:prompt => "Select a Contact"}, {:class => "contact_selection"}) %>
   </div>
 
 

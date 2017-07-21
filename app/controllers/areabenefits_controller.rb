@@ -3,6 +3,9 @@ class AreabenefitsController < ApplicationController
 
   # GET /areabenefits
   # GET /areabenefits.json
+
+
+
   def index
     @areabenefits = Areabenefit.all
   end

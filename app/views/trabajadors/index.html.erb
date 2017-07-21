@@ -18,6 +18,8 @@
         <td><%= trabajador.nombre %></td>
         <td><%= trabajador.rut %></td>
         <td><%= trabajador.centrocosto %></td>
+        <td><%= trabajador.estado %></td>
+        <td><%= image_tag trabajador.image.url(:thumb) %> </td>
         <td><%= link_to 'Show', trabajador %></td>
         <td><%= link_to 'Edit', edit_trabajador_path(trabajador) %></td>
         <td><%= link_to 'Destroy', trabajador, method: :delete, data: { confirm: 'Are you sure?' } %></td>

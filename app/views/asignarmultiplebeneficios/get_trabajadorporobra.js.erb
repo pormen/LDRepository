@@ -1,26 +1,36 @@
+//var tableSize= $('#tblTrabajadores tbody tr').length;
+//alert(tableSize);
 
-$('#tblTrabajadores tbody').remove();
+//$('#tblTrabajadores tbody').remove();
 
+$('#tblTrabajadores tr').not(':first').remove();
 
+var html = '';
 <% @trabajadores.each do |trabajador| %>
-	var con = '';
+
 <% if trabajador.estado == "activo" %>
+<% centrocosto = Centrocosto.find(trabajador.centrocosto.id) %>
 <% Rails.logger.warn " lala #{trabajador.rut}" %>
+	var id = '<%= trabajador.id %>';
+	var nombre = '<%= trabajador.nombre %>';
+	var rut = '<%= trabajador.rut %>';
+	var estado  ='<%= trabajador.estado %>';
 	
-    
-    con+= '<tr>';
-    con+= '<td><%= trabajador.nombre %></td>';
-    con+= '<td><%= trabajador.rut %></td>';
-    con+= '<td><%= trabajador.estado %></td>';
-    con+= '</tr>';
-   
+	var centro  ='<%= centrocosto.codigo %>';
+	html += '<tr>';
+	html += '<td><input type="checkbox" name="trabajador_id+'+id+'+" id="trabajador_id+'+id+'+" value="+'+id+'+" /></td>';
+	html += '<td>'+nombre+'</td>';
+	html += '<td>'+rut+'</td>';
+	html += '<td>'+centro+'</td>';
+	html += '<td>'+estado+'</td>';
+	html += '</tr>';
+
+
+	
+
    <% end %>
-   alert(String(con));
+
 <% end %>
 
+$('#tblTrabajadores tr').first().after(html);
 
-
-$('#tblTrabajadores tbody').html(con);
-<%    #@trabajadores.each do |test|    %>
-<%    #  Rails.logger.warn "Param #{test}"  %>
-<%    #end    %>

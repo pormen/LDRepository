@@ -6,6 +6,17 @@ class LogbenefitsController < ApplicationController
   def index
     #@logbenefits = Logbenefit.all
     @assignbenefit = Assignbenefit.all
+
+    respond_to do |format|
+        format.html
+        format.pdf {
+          render pdf: "Reporte",
+          template: "logbenefits/reporteLog"
+        }
+          
+      
+    end
+
   end
 
   # GET /logbenefits/1

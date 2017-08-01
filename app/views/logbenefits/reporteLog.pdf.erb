@@ -1,46 +1,10 @@
-<script type="text/javascript">
-function myFunction(){
-
-alert("sdsds1");
-  var PDFDocument = require('pdfkit');
-  doc = new PDFDocument();
-  var fs =require('fs');
-  alert("sdsds2");
-
-  doc.pipe (fs.createWriteStream('out.pdf'));
-  doc.moveTO(300,75)
-  .lineTo(373, 301)
-  .fill('red','even-odd');
-  alert("sdsds3");
-
-  var loremIpsum = 'Lorem';
-
-  doc.y =320;
-  doc.fillColor('black')
-  doc.text(loremIpsum,{
-  paragraphGap:10,
-  indent:20,
-  align: 'justify',
-  column: 2  
-  });
-
-
-  doc.end();
-
-  
-
-
-}
-
-
-</script>
-
-
-<p id="notice"><%= notice %></p>
-
-<h1>Log de Beneficios</h1>
-
-<table>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<head>
+<body>
+	<table>
   <thead>
     <tr>
       <th>Id</th>
@@ -84,13 +48,5 @@ alert("sdsds1");
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<button onclick="myFunction()">Try</button>
-
-
-<%= link_to 'New Logbenefit', new_logbenefit_path %>
-
-<a href="logbenefits.pdf">PDF</a>
-
+</body>
+</html>

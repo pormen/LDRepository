@@ -1,19 +1,26 @@
 <h1>Hola MUndo</h1>
 
+<h2> Log Intermedio </h2>
 
 <%=form_for Benefit.new, url: {controller: "pages", action: "indexBenefitPerName"} do %>
 
+	<div class="field">
+	<%= collection_select(:benefit, :benefit_id, Benefit.all, :id, :nombre, {:prompt => "Select a Contact"}, {:class => "contact_selection"}) %>
+	</div>
+	<div class="actions">
+	<%= submit_tag 'Create' %>
+	</div>
+<% end %>
+
+<h2> Log Final de Asistencia </h2>
 
 
-    <div class="field">
+<%=form_for Benefit.new, url: {controller: "pages", action: "logBeneficiosCheckAsistencia"} do %>
 
-    <%= collection_select(:benefit, :benefit_id, Benefit.all, :id, :nombre, {:prompt => "Select a Contact"}, {:class => "contact_selection"}) %>
-  </div>
-
-
-<br>
-
-  <div class="actions">
+	<div class="field">
+	<%= collection_select(:benefit, :benefit_id, Benefit.all, :id, :nombre, {:prompt => "Select a Contact"}, {:class => "contact_selection"}) %>
+  	</div>
+  	<div class="actions">
     <%= submit_tag 'Create' %>
-  </div>
+  	</div>
 <% end %>

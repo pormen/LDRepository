@@ -1,0 +1,67 @@
+<%= form_for(logbenefitsfinal) do |f| %>
+  <% if logbenefitsfinal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(logbenefitsfinal.errors.count, "error") %> prohibited this logbenefitsfinal from being saved:</h2>
+
+      <ul>
+      <% logbenefitsfinal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :areabeneficio %>
+    <%= f.text_area :areabeneficio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombrebeneficio %>
+    <%= f.text_area :nombrebeneficio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :costoempresa %>
+    <%= f.text_area :costoempresa %>
+  </div>
+
+  <div class="field">
+    <%= f.label :costotrabajador %>
+    <%= f.text_area :costotrabajador %>
+  </div>
+
+  <div class="field">
+    <%= f.label :ruttrabajador %>
+    <%= f.text_area :ruttrabajador %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombretrabajador %>
+    <%= f.text_area :nombretrabajador %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rutbeneficiario %>
+    <%= f.text_area :rutbeneficiario %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombrebeneficiario %>
+    <%= f.text_area :nombrebeneficiario %>
+  </div>
+
+  <div class="field">
+    <%= f.label :relacion %>
+    <%= f.text_area :relacion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombreobra %>
+    <%= f.text_area :nombreobra %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

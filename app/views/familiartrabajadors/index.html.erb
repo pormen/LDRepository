@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Familiartrabajadors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rut</th>
+      <th>Nombre</th>
+      <th>Relacion</th>
+      <th>Trabajador</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @familiartrabajadors.each do |familiartrabajador| %>
+      <tr>
+        <td><%= familiartrabajador.rut %></td>
+        <td><%= familiartrabajador.nombre %></td>
+        <td><%= familiartrabajador.relacion %></td>
+        <td><%= familiartrabajador.trabajador %></td>
+        <td><%= link_to 'Show', familiartrabajador %></td>
+        <td><%= link_to 'Edit', edit_familiartrabajador_path(familiartrabajador) %></td>
+        <td><%= link_to 'Destroy', familiartrabajador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Familiartrabajador', new_familiartrabajador_path %>

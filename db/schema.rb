@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718042749) do
+ActiveRecord::Schema.define(version: 20170814145825) do
 
   create_table "areabenefits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "nombre",     limit: 65535
@@ -82,11 +82,37 @@ ActiveRecord::Schema.define(version: 20170718042749) do
     t.datetime "updated_at",               null: false
   end
 
+  create_table "familiartrabajadors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "rut",             limit: 65535
+    t.text     "nombre",          limit: 65535
+    t.text     "relacion",        limit: 65535
+    t.integer  "trabajador_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.text     "fechanacimiento", limit: 65535
+    t.index ["trabajador_id"], name: "index_familiartrabajadors_on_trabajador_id", using: :btree
+  end
+
   create_table "logbenefits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "assignbenefit_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["assignbenefit_id"], name: "index_logbenefits_on_assignbenefit_id", using: :btree
+  end
+
+  create_table "logbenefitsfinals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "areabeneficio",      limit: 65535
+    t.text     "nombrebeneficio",    limit: 65535
+    t.text     "costoempresa",       limit: 65535
+    t.text     "costotrabajador",    limit: 65535
+    t.text     "ruttrabajador",      limit: 65535
+    t.text     "nombretrabajador",   limit: 65535
+    t.text     "rutbeneficiario",    limit: 65535
+    t.text     "nombrebeneficiario", limit: 65535
+    t.text     "relacion",           limit: 65535
+    t.text     "nombreobra",         limit: 65535
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "trabajadors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -111,6 +137,7 @@ ActiveRecord::Schema.define(version: 20170718042749) do
   add_foreign_key "assignbenefits", "benefits"
   add_foreign_key "atencionsocials", "benefits"
   add_foreign_key "benefits", "areabenefits"
+  add_foreign_key "familiartrabajadors", "trabajadors"
   add_foreign_key "logbenefits", "assignbenefits"
   add_foreign_key "trabajadors", "centrocostos"
 end

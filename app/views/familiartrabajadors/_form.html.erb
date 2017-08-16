@@ -1,0 +1,37 @@
+<%= form_for(familiartrabajador) do |f| %>
+  <% if familiartrabajador.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(familiartrabajador.errors.count, "error") %> prohibited this familiartrabajador from being saved:</h2>
+
+      <ul>
+      <% familiartrabajador.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rut %>
+    <%= f.text_area :rut %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_area :nombre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :relacion %>
+    <%= f.text_area :relacion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :trabajador_id %>
+    <%= f.text_field :trabajador_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

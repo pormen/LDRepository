@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rut: MyText
+  nombre: MyText
+  relacion: MyText
+  trabajador: one
+
+two:
+  rut: MyText
+  nombre: MyText
+  relacion: MyText
+  trabajador: two

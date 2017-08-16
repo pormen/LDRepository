@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :familiartrabajadors
+  resources :logbenefitsfinals
   resources :asignarmultiplebeneficios do
     collection do
       get 'get_contacts', to: "asignarmultiplebeneficios#get_contacts"
@@ -19,11 +21,15 @@ Rails.application.routes.draw do
 
   resources :pages do
     get :download_pdf
+
+
   end
 
 
   get '/benefitPanel' => 'pages#benefitPanel' 
-  post '/benefitPanel' => 'pages#indexBenefitPerName' 
+  post '/logBeneficiosCheckAsistencia' => 'pages#logBeneficiosCheckAsistencia' 
+  post '/indexBenefitPerName' => 'pages#indexBenefitPerName' 
+ 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 

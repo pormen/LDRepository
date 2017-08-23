@@ -3,6 +3,33 @@ class LogbenefitsfinalsController < ApplicationController
 
   # GET /logbenefitsfinals
   # GET /logbenefitsfinals.json
+  def saveLogFinal
+    params.each do |key,value| 
+      Rails.logger.warn "Param #{key}: #{value}"
+      if key.include?("assignbenefit")
+        Rails.logger.warn "Entro"
+        ab = Assignbenefit.find(value)
+        benefit = Benefit.find(ab.benefit_id)
+        areabenefit = Areabenefit.find(benefit.areabenefit_id)
+        trabajador = Trabajador.find_by rut: ab.ruttrabajador
+        lbf = Logbenefitsfinal.new(
+          areabeneficio: areabenefit.nombre, 
+          nombrebeneficio:benefit.nombre, 
+          costoempresa: benefit.costotrabajador, 
+          costotrabajador:benefit.costoempresa , 
+          ruttrabajador:ab.ruttrabajador, 
+          nombretrabajador: trabajador.nombre, 
+          rutbeneficiario:ab.rutbeneficiario, 
+          nombrebeneficiario: "Familiar", 
+          relacion:ab.relacion, 
+          nombreobra:ab.idobra,
+          asistebeneficio: 1,
+          Idasignacionbeneficio: value)
+        lbf.save!
+      end
+    end
+  end
+
   def index
     @logbenefitsfinals = Logbenefitsfinal.all
   end
@@ -69,6 +96,7 @@ class LogbenefitsfinalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def logbenefitsfinal_params
-      params.require(:logbenefitsfinal).permit(:areabeneficio, :nombrebeneficio, :costoempresa, :costotrabajador, :ruttrabajador, :nombretrabajador, :rutbeneficiario, :nombrebeneficiario, :relacion, :nombreobra)
+      params.require(:logbenefitsfinal).permit(:areabeneficio, :nombrebeneficio, :costoempresa, :costotrabajador, :ruttrabajador, :nombretrabajador, :rutbeneficiario, :nombrebeneficiario, :relacion, :nombreobra, :asistebeneficio, :Idasignacionbeneficio)
     end
 end
+

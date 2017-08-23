@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   resources :familiartrabajadors
-  resources :logbenefitsfinals
+  resources :logbenefitsfinals do
+    collection do
+      post 'saveLogFinal', to: "logbenefitsfinals#saveLogFinal"
+    end
+  end
+
+
+
   resources :asignarmultiplebeneficios do
     collection do
       get 'get_contacts', to: "asignarmultiplebeneficios#get_contacts"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814145825) do
+ActiveRecord::Schema.define(version: 20170822111718) do
 
   create_table "areabenefits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "nombre",     limit: 65535
@@ -101,18 +101,20 @@ ActiveRecord::Schema.define(version: 20170814145825) do
   end
 
   create_table "logbenefitsfinals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "areabeneficio",      limit: 65535
-    t.text     "nombrebeneficio",    limit: 65535
-    t.text     "costoempresa",       limit: 65535
-    t.text     "costotrabajador",    limit: 65535
-    t.text     "ruttrabajador",      limit: 65535
-    t.text     "nombretrabajador",   limit: 65535
-    t.text     "rutbeneficiario",    limit: 65535
-    t.text     "nombrebeneficiario", limit: 65535
-    t.text     "relacion",           limit: 65535
-    t.text     "nombreobra",         limit: 65535
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.text     "areabeneficio",         limit: 65535
+    t.text     "nombrebeneficio",       limit: 65535
+    t.text     "costoempresa",          limit: 65535
+    t.text     "costotrabajador",       limit: 65535
+    t.text     "ruttrabajador",         limit: 65535
+    t.text     "nombretrabajador",      limit: 65535
+    t.text     "rutbeneficiario",       limit: 65535
+    t.text     "nombrebeneficiario",    limit: 65535
+    t.text     "relacion",              limit: 65535
+    t.text     "nombreobra",            limit: 65535
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "asistebeneficio"
+    t.integer  "Idasignacionbeneficio"
   end
 
   create_table "trabajadors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

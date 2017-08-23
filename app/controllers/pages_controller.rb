@@ -4,6 +4,7 @@ class PagesController < ActionController::Base
 
 
 	def logBeneficiosCheckAsistencia
+		@logbenefitsfinal = Logbenefitsfinal.new
 		@assignbenefit = Assignbenefit.where(benefit_id: params[:benefit][:benefit_id])
 	end
 

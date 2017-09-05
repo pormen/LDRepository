@@ -9,7 +9,7 @@ class AsignarmultiplebeneficiosController < ApplicationController
     #@contacts = @company.contacts
 
     Rails.logger.warn "#{:areabenefit_id} jajaxxx"
-    @contacts = Benefit.where(areabenefit_id: params[:areabenefit_id])
+    @contacts = Benefit.where(areabenefit_id: params[:areabenefit_id], asistencia: '1')
   end
 
   def get_trabajadorporobra

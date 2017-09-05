@@ -47,12 +47,12 @@
 
   <div class="field">
     <%= f.label :areabenefit_id %>
-    <%= f.collection_select(:areabenefit_id, Areabenefit.all, :id, :nombre, {:prompt => "Please select a company"},{:class => "company_selection"}) %>
+    <%= f.collection_select(:areabenefit_id, Areabenefit.all, :id, :nombre, {:prompt => "---Seleccionar Area Beneficio---"},{:class => "company_selection"}) %>
   </div>
 
     <div class="field">
     <%= f.label :benefit_id %>
-    <%= f.collection_select(:benefit_id, Benefit.all, :id, :nombre, {:prompt => "Select a Contact"}, {:class => "contact_selection"}) %>
+    <%= f.collection_select(:benefit_id, Benefit.all, :id, :nombre, {:prompt => "---Seleccionar Beneficio---"}, {:class => "contact_selection"}) %>
   </div>
 
 

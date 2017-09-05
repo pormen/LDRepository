@@ -5,8 +5,14 @@
 <%=form_for Benefit.new, url: {controller: "pages", action: "indexBenefitPerName"} do %>
 
 	<div class="field">
-	<%= collection_select(:benefit, :benefit_id, Benefit.all, :id, :nombre, {:prompt => "Select a Contact"}, {:class => "contact_selection"}) %>
+	<%= collection_select(:benefit, :benefit_id, Benefit.all, :id, :nombre, {:prompt => "---Seleccionar Beneficio---"}, {:class => "contact_selection"}) %>
 	</div>
+
+    <div class="field">
+    <%= collection_select(:centrocosto, :centrocosto_id, Centrocosto.all, :id, :codigo, {:prompt => "Escoger Obra"},{:class => "ccosto_selection"}) %>
+    </div>
+
+
 	<div class="actions">
 	<%= submit_tag 'Create' %>
 	</div>
@@ -18,8 +24,14 @@
 <%=form_for Benefit.new, url: {controller: "pages", action: "logBeneficiosCheckAsistencia"} do %>
 
 	<div class="field">
-	<%= collection_select(:benefit, :benefit_id, Benefit.all, :id, :nombre, {:prompt => "Select a Contact"}, {:class => "contact_selection"}) %>
+	<%= collection_select(:benefit, :benefit_id, Benefit.all, :id, :nombre, {:prompt => "---Seleccionar Beneficio---"}, {:class => "contact_selection"}) %>
   	</div>
+
+
+  	<div class="field">
+    <%= collection_select(:centrocosto, :centrocosto_id, Centrocosto.all, :id, :codigo, {:prompt => "Escoger Obra"},{:class => "ccosto_selection"}) %>
+    </div>
+
   	<div class="actions">
     <%= submit_tag 'Create' %>
   	</div>

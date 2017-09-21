@@ -1,0 +1,77 @@
+<%= form_for(logloan) do |f| %>
+  <% if logloan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(logloan.errors.count, "error") %> prohibited this logloan from being saved:</h2>
+
+      <ul>
+      <% logloan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rut_solicitante %>
+    <%= f.text_area :rut_solicitante %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombre_solicitante %>
+    <%= f.text_area :nombre_solicitante %>
+  </div>
+
+  <div class="field">
+    <%= f.label :empresa %>
+    <%= f.text_area :empresa %>
+  </div>
+
+  <div class="field">
+    <%= f.label :obra %>
+    <%= f.text_area :obra %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cargo %>
+    <%= f.text_area :cargo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :monto_solicitado %>
+    <%= f.text_area :monto_solicitado %>
+  </div>
+
+  <div class="field">
+    <%= f.label :numero_coutas %>
+    <%= f.text_area :numero_coutas %>
+  </div>
+
+  <div class="field">
+    <%= f.label :monto_pagado %>
+    <%= f.text_area :monto_pagado %>
+  </div>
+
+  <div class="field">
+    <%= f.label :por_pagar %>
+    <%= f.text_area :por_pagar %>
+  </div>
+
+  <div class="field">
+    <%= f.label :motivo_solicitud %>
+    <%= f.text_area :motivo_solicitud %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comenatrios %>
+    <%= f.text_area :comenatrios %>
+  </div>
+
+  <div class="field">
+    <%= f.label :estado %>
+    <%= f.text_area :estado %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

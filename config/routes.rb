@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :logloans
+  resources :logas
+  resources :obras
   resources :familiartrabajadors
   resources :logbenefitsfinals do
     collection do
@@ -32,10 +35,12 @@ Rails.application.routes.draw do
 
   end
 
-
+  get '/reportspannel' => 'pages#reportspannel'
   get '/benefitPanel' => 'pages#benefitPanel' 
   post '/logBeneficiosCheckAsistencia' => 'pages#logBeneficiosCheckAsistencia' 
   post '/indexBenefitPerName' => 'pages#indexBenefitPerName' 
+
+  get 'download_pdf' => 'pages#download_pdf'  
  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  asocial_id: 1
+  user_name: MyText
+  codigo_obra: MyText
+  rut_atendido: MyText
+  nombre_atendido: MyText
+  apellido_paterno_paterno_atendido: MyText
+  apellido_materno_atendido: MyText
+  aspcategory_name: MyText
+  solucion: MyText
+  estado: false
+  subcontrato: false
+  supervisor: MyText
+  descripcion: MyText
+  rut_pariente: MyText
+  nombre_pariente: MyText
+  apellido_paterno_pariente: MyText
+  apellido_materno_pariente: MyText
+  parentezco: MyText
+  empresa: MyText
+  comentarios_caso: MyText
+  caso_amerita_epc: MyText
+  derivar_a: MyText
+  codigo: 1
+  epcformulary_id: 1
+  rut_atendido_epc: 1
+  codigo_epc: 1
+  telefono: 1
+  beneficio: MyString
+
+two:
+  asocial_id: 1
+  user_name: MyText
+  codigo_obra: MyText
+  rut_atendido: MyText
+  nombre_atendido: MyText
+  apellido_paterno_paterno_atendido: MyText
+  apellido_materno_atendido: MyText
+  aspcategory_name: MyText
+  solucion: MyText
+  estado: false
+  subcontrato: false
+  supervisor: MyText
+  descripcion: MyText
+  rut_pariente: MyText
+  nombre_pariente: MyText
+  apellido_paterno_pariente: MyText
+  apellido_materno_pariente: MyText
+  parentezco: MyText
+  empresa: MyText
+  comentarios_caso: MyText
+  caso_amerita_epc: MyText
+  derivar_a: MyText
+  codigo: 1
+  epcformulary_id: 1
+  rut_atendido_epc: 1
+  codigo_epc: 1
+  telefono: 1
+  beneficio: MyString

@@ -2,6 +2,16 @@ class PagesController < ActionController::Base
 	def benefitṔanel
 	end
 
+	def reportspannel
+
+		@obra = Obra.new
+		#@asformulary = Asformulary.new
+
+		#puts params[:obra][:id]
+		
+		
+	end
+
 
 	def logBeneficiosCheckAsistencia
 		@logbenefitsfinal = Logbenefitsfinal.new

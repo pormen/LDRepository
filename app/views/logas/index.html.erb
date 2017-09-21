@@ -1,0 +1,81 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Logas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Asocial</th>
+      <th>User name</th>
+      <th>Codigo obra</th>
+      <th>Rut atendido</th>
+      <th>Nombre atendido</th>
+      <th>Apellido paterno paterno atendido</th>
+      <th>Apellido materno atendido</th>
+      <th>Aspcategory name</th>
+      <th>Solucion</th>
+      <th>Estado</th>
+      <th>Subcontrato</th>
+      <th>Supervisor</th>
+      <th>Descripcion</th>
+      <th>Rut pariente</th>
+      <th>Nombre pariente</th>
+      <th>Apellido paterno pariente</th>
+      <th>Apellido materno pariente</th>
+      <th>Parentezco</th>
+      <th>Empresa</th>
+      <th>Comentarios caso</th>
+      <th>Caso amerita epc</th>
+      <th>Derivar a</th>
+      <th>Codigo</th>
+      <th>Epcformulary</th>
+      <th>Rut atendido epc</th>
+      <th>Codigo epc</th>
+      <th>Telefono</th>
+      <th>Beneficio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @logas.each do |loga| %>
+      <tr>
+        <td><%= loga.asocial_id %></td>
+        <td><%= loga.user_name %></td>
+        <td><%= loga.codigo_obra %></td>
+        <td><%= loga.rut_atendido %></td>
+        <td><%= loga.nombre_atendido %></td>
+        <td><%= loga.apellido_paterno_paterno_atendido %></td>
+        <td><%= loga.apellido_materno_atendido %></td>
+        <td><%= loga.aspcategory_name %></td>
+        <td><%= loga.solucion %></td>
+        <td><%= loga.estado %></td>
+        <td><%= loga.subcontrato %></td>
+        <td><%= loga.supervisor %></td>
+        <td><%= loga.descripcion %></td>
+        <td><%= loga.rut_pariente %></td>
+        <td><%= loga.nombre_pariente %></td>
+        <td><%= loga.apellido_paterno_pariente %></td>
+        <td><%= loga.apellido_materno_pariente %></td>
+        <td><%= loga.parentezco %></td>
+        <td><%= loga.empresa %></td>
+        <td><%= loga.comentarios_caso %></td>
+        <td><%= loga.caso_amerita_epc %></td>
+        <td><%= loga.derivar_a %></td>
+        <td><%= loga.codigo %></td>
+        <td><%= loga.epcformulary_id %></td>
+        <td><%= loga.rut_atendido_epc %></td>
+        <td><%= loga.codigo_epc %></td>
+        <td><%= loga.telefono %></td>
+        <td><%= loga.beneficio %></td>
+        <td><%= link_to 'Show', loga %></td>
+        <td><%= link_to 'Edit', edit_loga_path(loga) %></td>
+        <td><%= link_to 'Destroy', loga, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Loga', new_loga_path %>

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rut_solicitante: MyText
+  nombre_solicitante: MyText
+  empresa: MyText
+  obra: MyText
+  cargo: MyText
+  monto_solicitado: MyText
+  numero_coutas: MyText
+  monto_pagado: MyText
+  por_pagar: MyText
+  motivo_solicitud: MyText
+  comenatrios: MyText
+  estado: MyText
+
+two:
+  rut_solicitante: MyText
+  nombre_solicitante: MyText
+  empresa: MyText
+  obra: MyText
+  cargo: MyText
+  monto_solicitado: MyText
+  numero_coutas: MyText
+  monto_pagado: MyText
+  por_pagar: MyText
+  motivo_solicitud: MyText
+  comenatrios: MyText
+  estado: MyText

@@ -1,0 +1,157 @@
+<%= form_for(loga) do |f| %>
+  <% if loga.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(loga.errors.count, "error") %> prohibited this loga from being saved:</h2>
+
+      <ul>
+      <% loga.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :asocial_id %>
+    <%= f.number_field :asocial_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_name %>
+    <%= f.text_area :user_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :codigo_obra %>
+    <%= f.text_area :codigo_obra %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rut_atendido %>
+    <%= f.text_area :rut_atendido %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombre_atendido %>
+    <%= f.text_area :nombre_atendido %>
+  </div>
+
+  <div class="field">
+    <%= f.label :apellido_paterno_paterno_atendido %>
+    <%= f.text_area :apellido_paterno_paterno_atendido %>
+  </div>
+
+  <div class="field">
+    <%= f.label :apellido_materno_atendido %>
+    <%= f.text_area :apellido_materno_atendido %>
+  </div>
+
+  <div class="field">
+    <%= f.label :aspcategory_name %>
+    <%= f.text_area :aspcategory_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :solucion %>
+    <%= f.text_area :solucion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :estado %>
+    <%= f.check_box :estado %>
+  </div>
+
+  <div class="field">
+    <%= f.label :subcontrato %>
+    <%= f.check_box :subcontrato %>
+  </div>
+
+  <div class="field">
+    <%= f.label :supervisor %>
+    <%= f.text_area :supervisor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descripcion %>
+    <%= f.text_area :descripcion %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rut_pariente %>
+    <%= f.text_area :rut_pariente %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombre_pariente %>
+    <%= f.text_area :nombre_pariente %>
+  </div>
+
+  <div class="field">
+    <%= f.label :apellido_paterno_pariente %>
+    <%= f.text_area :apellido_paterno_pariente %>
+  </div>
+
+  <div class="field">
+    <%= f.label :apellido_materno_pariente %>
+    <%= f.text_area :apellido_materno_pariente %>
+  </div>
+
+  <div class="field">
+    <%= f.label :parentezco %>
+    <%= f.text_area :parentezco %>
+  </div>
+
+  <div class="field">
+    <%= f.label :empresa %>
+    <%= f.text_area :empresa %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comentarios_caso %>
+    <%= f.text_area :comentarios_caso %>
+  </div>
+
+  <div class="field">
+    <%= f.label :caso_amerita_epc %>
+    <%= f.text_area :caso_amerita_epc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :derivar_a %>
+    <%= f.text_area :derivar_a %>
+  </div>
+
+  <div class="field">
+    <%= f.label :codigo %>
+    <%= f.number_field :codigo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :epcformulary_id %>
+    <%= f.number_field :epcformulary_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rut_atendido_epc %>
+    <%= f.number_field :rut_atendido_epc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :codigo_epc %>
+    <%= f.number_field :codigo_epc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefono %>
+    <%= f.number_field :telefono %>
+  </div>
+
+  <div class="field">
+    <%= f.label :beneficio %>
+    <%= f.text_field :beneficio %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

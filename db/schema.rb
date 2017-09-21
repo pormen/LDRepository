@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170822111718) do
+ActiveRecord::Schema.define(version: 20170917013747) do
 
   create_table "areabenefits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "nombre",     limit: 65535
@@ -93,6 +93,39 @@ ActiveRecord::Schema.define(version: 20170822111718) do
     t.index ["trabajador_id"], name: "index_familiartrabajadors_on_trabajador_id", using: :btree
   end
 
+  create_table "logas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "asocial_id"
+    t.text     "user_name",                         limit: 65535
+    t.text     "codigo_obra",                       limit: 65535
+    t.text     "rut_atendido",                      limit: 65535
+    t.text     "nombre_atendido",                   limit: 65535
+    t.text     "apellido_paterno_paterno_atendido", limit: 65535
+    t.text     "apellido_materno_atendido",         limit: 65535
+    t.text     "aspcategory_name",                  limit: 65535
+    t.text     "solucion",                          limit: 65535
+    t.boolean  "estado"
+    t.boolean  "subcontrato"
+    t.text     "supervisor",                        limit: 65535
+    t.text     "descripcion",                       limit: 65535
+    t.text     "rut_pariente",                      limit: 65535
+    t.text     "nombre_pariente",                   limit: 65535
+    t.text     "apellido_paterno_pariente",         limit: 65535
+    t.text     "apellido_materno_pariente",         limit: 65535
+    t.text     "parentezco",                        limit: 65535
+    t.text     "empresa",                           limit: 65535
+    t.text     "comentarios_caso",                  limit: 65535
+    t.text     "caso_amerita_epc",                  limit: 65535
+    t.text     "derivar_a",                         limit: 65535
+    t.integer  "codigo"
+    t.integer  "epcformulary_id"
+    t.integer  "rut_atendido_epc"
+    t.integer  "codigo_epc"
+    t.integer  "telefono"
+    t.string   "beneficio"
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+  end
+
   create_table "logbenefits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "assignbenefit_id"
     t.datetime "created_at",       null: false
@@ -115,6 +148,31 @@ ActiveRecord::Schema.define(version: 20170822111718) do
     t.datetime "updated_at",                          null: false
     t.integer  "asistebeneficio"
     t.integer  "Idasignacionbeneficio"
+  end
+
+  create_table "logloans", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "rut_solicitante",    limit: 65535
+    t.text     "nombre_solicitante", limit: 65535
+    t.text     "empresa",            limit: 65535
+    t.text     "obra",               limit: 65535
+    t.text     "cargo",              limit: 65535
+    t.text     "monto_solicitado",   limit: 65535
+    t.text     "numero_coutas",      limit: 65535
+    t.text     "monto_pagado",       limit: 65535
+    t.text     "por_pagar",          limit: 65535
+    t.text     "motivo_solicitud",   limit: 65535
+    t.text     "comenatrios",        limit: 65535
+    t.text     "estado",             limit: 65535
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  create_table "obras", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "nombre",     limit: 65535
+    t.text     "direccion",  limit: 65535
+    t.text     "codigo",     limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "trabajadors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
